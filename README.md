@@ -1,7 +1,9 @@
 <p align="center">
-  <img src="Fale.png" alt="Fale Mais" />
+  <img src="./public/img/Fale.png" alt="Fale Mais" />
 </p>
 <h2 align="center">📲 API para calcular as tarifas de ligações</h2>
+
+![Badge](https://img.shields.io/badge/Heroku-deployed-%#430098?style=for-the-badge&logo=ghost)
 
 Indice
 =================
@@ -30,3 +32,11 @@ Indice
 - [x] Buscar por plano especifico
 - [x] Buscar por tarifa especifico
 - [x] Calculo do valor da tarifa com adesaão dos planos FaleMais
+
+### Veja você mesmo
+
+<p align="center">
+  <img src="./public/img/insomnia.png" alt="Fale Mais" />
+</p>
+
+Arquivo para importação no Insomnia: (Aqui)
