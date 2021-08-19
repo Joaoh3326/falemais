@@ -9,6 +9,7 @@ Indice
 =================
 <!--ts-->
    * [Sobre](#Sobre)
+   * [Estrutura dos arquivos](#arquivos)
    * [Features](#Features)
    * [Veja você mesmo](#veja-voce-mesmo)
    * [Pré-requisitos](#pre-requisitos)
@@ -21,6 +22,98 @@ Indice
 
 ### Sobre <a name="Sobre"></a>
  Falemais é uma plataforma que permite aos seus cliente calcularem de antemão as vantagens de se adquirir os melhores planos do mercado
+
+
+### Estrutura dos arquivos <a name="arquivos"></a>
+ ```
+📦falemais
+ ┣ 📂public // arquivos publicos
+ ┃ ┣ 📂img
+ ┃ ┃ ┣ 📜Fale.png
+ ┃ ┃ ┗ 📜insomnia.png
+ ┃ ┗ 📂json
+ ┃ ┃ ┗ 📜Insomnia-All_2021-08-18.json
+ ┣ 📂src // fonte do projeto
+ ┃ ┣ 📂entities // camada de dominio
+ ┃ ┃ ┣ 📜ddd.js
+ ┃ ┃ ┣ 📜fee.js
+ ┃ ┃ ┗ 📜plan.js
+ ┃ ┣ 📂factories // responsavel por buildar os services
+ ┃ ┃ ┣ 📜dddFactory.js
+ ┃ ┃ ┣ 📜feeFactory.js
+ ┃ ┃ ┗ 📜planFactory.js
+ ┃ ┣ 📂infra // camada de infra
+ ┃ ┃ ┣ 📂database // responsavel por tudo relacionado aos acessos do DB
+ ┃ ┃ ┃ ┣ 📂models // models do DB
+ ┃ ┃ ┃ ┃ ┣ 📜ddd.js
+ ┃ ┃ ┃ ┃ ┣ 📜fee.js
+ ┃ ┃ ┃ ┃ ┣ 📜index.js
+ ┃ ┃ ┃ ┃ ┗ 📜plan.js
+ ┃ ┃ ┃ ┣ 📂seeder // executor de seeds para popular o banco
+ ┃ ┃ ┃ ┃ ┣ 📂seeds
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜ddd.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜fee.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜index.js
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜plan.js
+ ┃ ┃ ┃ ┃ ┗ 📜seeder.js
+ ┃ ┃ ┃ ┗ 📜index.js
+ ┃ ┃ ┣ 📂documentation // guardar o arquivo de documentação das rotas
+ ┃ ┃ ┃ ┗ 📜swagger.json
+ ┃ ┃ ┣ 📂errors // padronizador de mensagens de erro HTTP na API
+ ┃ ┃ ┃ ┗ 📜index.js
+ ┃ ┃ ┣ 📂logger // configuração dos loggers da API
+ ┃ ┃ ┃ ┗ 📜index.js
+ ┃ ┃ ┣ 📂responses // padronizador de mensagens de resposta HTTP na API
+ ┃ ┃ ┃ ┗ 📜index.js
+ ┃ ┃ ┣ 📂validations // validações utilizadas pela API
+ ┃ ┃ ┃ ┗ 📜index.js
+ ┃ ┃ ┗ 📂webserver // responsavel por executar e configurar o servidor
+ ┃ ┃ ┃ ┣ 📂routes // rotas da aplicação
+ ┃ ┃ ┃ ┃ ┗ 📂v1
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜ddd.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜fee.js
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜index.js
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜plan.js
+ ┃ ┃ ┃ ┗ 📜express.js
+ ┃ ┣ 📂repositories // adapter para trabalhar com o DB
+ ┃ ┃ ┣ 📜dddRepository.js
+ ┃ ┃ ┣ 📜feeRepository.js
+ ┃ ┃ ┗ 📜planRepository.js
+ ┃ ┣ 📂services // regra de negocio, o mesmo que useCase
+ ┃ ┃ ┣ 📜dddService.js
+ ┃ ┃ ┣ 📜feeService.js
+ ┃ ┃ ┗ 📜planService.js
+ ┃ ┗ 📜server.js
+ ┣ 📂test // onde estão armazenados os tests
+ ┃ ┣ 📂integration // teste relacionado com o fluxo completo
+ ┃ ┃ ┣ 📜ddd.spec.js
+ ┃ ┃ ┣ 📜fee.spec.js
+ ┃ ┃ ┗ 📜plan.spec.js
+ ┃ ┗ 📂unit // teste relacioando as camadas de uma forma granular
+ ┃ ┃ ┣ 📂entities // teste de entidade
+ ┃ ┃ ┃ ┣ 📜ddd.spec.js
+ ┃ ┃ ┃ ┣ 📜fee.spec.js
+ ┃ ┃ ┃ ┗ 📜plan.spec.js
+ ┃ ┃ ┣ 📂repositories // testes de repositorio
+ ┃ ┃ ┃ ┣ 📜PlanRepository.spec.js
+ ┃ ┃ ┃ ┣ 📜dddRepository.spec.js
+ ┃ ┃ ┃ ┗ 📜feeRepository.spec.js
+ ┃ ┃ ┗ 📂services // teste de serviço
+ ┃ ┃ ┃ ┣ 📜dddService.spec.js
+ ┃ ┃ ┃ ┣ 📜feeService.spec.js
+ ┃ ┃ ┃ ┗ 📜planService.spec.js
+ ┣ 📜.dockerignore
+ ┣ 📜.editorconfig
+ ┣ 📜.env
+ ┣ 📜.eslintrc.json
+ ┣ 📜.gitignore
+ ┣ 📜Dockerfile // arquivo de configuração do docker
+ ┣ 📜README.md
+ ┣ 📜docker-compose.yml // arquivo de configuração do docker-compose
+ ┣ 📜package-lock.json
+ ┗ 📜package.json
+
+ ```
 
 ### Features <a name="Features"></a>
 
@@ -100,7 +193,7 @@ npm run seed
 # Saia do container
 $ exit
 
-# O servidor inciará na porta:3000 - acesse <http://localhost:3000>
+# O servidor inciará na porta:3333 - acesse <http://localhost:3333>
 ```
 
 ### 📜 Documentação (swagger)  <a name="docs"></a>
