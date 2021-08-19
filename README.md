@@ -24,11 +24,11 @@ Indice
 
 ### Features <a name="Features"></a>
 
-- [x] Listagem de ddds
-- [x] Listagem de Planos
-- [x] Buscar por plano especifico
-- [x] Buscar por tarifa especifico
-- [x] Calculo do valor da tarifa com adesaão dos planos FaleMais
+- ✅ Listagem de ddds
+- ✅ Listagem de Planos
+- ✅ Buscar por plano especifico
+- ✅ Buscar por tarifa especifico
+- ✅ Calculo do valor da tarifa com adesaão dos planos FaleMais
 
 ### Veja você mesmo <a name="veja-voce-mesmo"></a>
 API encontra-se hospedada no heroku: https://moretalk-api.herokuapp.com/v1/ , utilize a url junto com insomnia, para aceesar todas as features em prod.
@@ -104,7 +104,7 @@ $ exit
 ```
 
 ### 📜 Documentação (swagger)  <a name="docs"></a>
-Não é possivel acessar a API quando esta rodando em produção
+Não é possivel acessar a documetação quando esta rodando em produção
 
 ```bash
 # Para acessar a documentação da api utilize a url
