@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 const Fee = require('../entities/fee');
-const errors = require('../infra/errors/errors');
-const responses = require('../infra/responses/responses');
-const validations = require('../infra/validations/validations');
+const errors = require('../infra/errors');
+const responses = require('../infra/responses');
+const validations = require('../infra/validations');
 
 class FeeService {
   constructor({ feeRepository, planRepository }) {

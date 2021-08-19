@@ -1,8 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 const Plan = require('../entities/plan');
-const errors = require('../infra/errors/errors');
-const responses = require('../infra/responses/responses');
-const validations = require('../infra/validations/validations');
+const errors = require('../infra/errors');
+const responses = require('../infra/responses');
+const validations = require('../infra/validations');
 
 class PlanService {
   constructor({ planRepository }) {

@@ -3,7 +3,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const DDDService = require('../../factories/dddFactory');
+const DDDService = require('../../../../factories/dddFactory');
 
 const dddService = DDDService.generateInstance();
 

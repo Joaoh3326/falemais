@@ -1,5 +1,5 @@
 const express = require('express');
-const FeeService = require('../../factories/feeFactory');
+const FeeService = require('../../../../factories/feeFactory');
 
 const router = express.Router();
 const feeService = FeeService.generateInstance();

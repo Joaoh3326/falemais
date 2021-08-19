@@ -12,6 +12,10 @@ if (process.env.NODE_ENV === 'production') {
 
 const pino = require('pino')(configPino);
 
+if (process.env.NODE_ENV === 'test') {
+  pino.level = 60;
+}
+
 const pinoHttp = require('pino-http')({ logger: pino });
 
 module.exports = { logger: pino, loggerHttp: pinoHttp };

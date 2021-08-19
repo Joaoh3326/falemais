@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const PlanService = require('../../factories/planFactory');
+const PlanService = require('../../../../factories/planFactory');
 
 const planService = PlanService.generateInstance();
 

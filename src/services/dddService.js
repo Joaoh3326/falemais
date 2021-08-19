@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 const DDD = require('../entities/ddd');
-const errors = require('../infra/errors/errors');
-const responses = require('../infra/responses/responses');
+const errors = require('../infra/errors');
+const responses = require('../infra/responses');
 
 class DDDService {
   constructor({ dddRepository }) {

@@ -8,7 +8,7 @@ const swaggerUi = require('swagger-ui-express');
 
 const swaggerDocument = require('../documentation/swagger.json');
 const database = require('../database');
-const routes = require('../../routes/v1');
+const routes = require('./routes/v1');
 const { logger, loggerHttp } = require('../logger');
 
 class ConfigureExpress {
