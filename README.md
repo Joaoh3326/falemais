@@ -3,7 +3,7 @@
 </p>
 <h2 align="center">📲 API para calcular as tarifas de ligações</h2>
 
-![Badge](https://img.shields.io/badge/Heroku-deployed-%#430098?style=for-the-badge&logo=ghost)
+![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)
 
 Indice
 =================
@@ -31,7 +31,7 @@ Indice
 - [x] Calculo do valor da tarifa com adesaão dos planos FaleMais
 
 ### Veja você mesmo <a name="veja-voce-mesmo"></a>
-
+API encontra-se hospedada no heroku: https://moretalk-api.herokuapp.com/v1/ , utilize a url junto com insomnia, para aceesar todas as features em prod.
 <p align="center">
   <img src="./public/img/insomnia.png" alt="Fale Mais" />
 </p>
