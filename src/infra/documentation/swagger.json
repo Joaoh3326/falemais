@@ -1,0 +1,146 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "FaleMais",
+    "description": "API para calculo de tarifas telefonicas",
+    "version": "1.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/v1",
+  "schemes": [
+    "http"
+  ],
+  "tags": [
+    {
+      "name": "DDDs",
+      "description": "Ações realizadas nos ddds"
+    },
+    {
+      "name": "Plans",
+      "description": "Ações realizadas nos Planos"
+    },
+    {
+      "name": "Fees",
+      "description": "Ações realizadas nas taxas"
+    }
+  ],
+  "paths": {
+    "/ddds": {
+      "get": {
+        "tags": [
+          "DDDs"
+        ],
+        "summary": "Retorna uma lista de ddds.",
+        "description": "Listagem dos ddds disponiveis",
+        "operationId": "DDD_LIST",
+        "responses": {}
+      }
+    },
+    "/plans": {
+      "get": {
+        "tags": [
+          "Plans"
+        ],
+        "summary": "Retorna uma lista de planos.",
+        "description": "Listagem dos planos disponiveis",
+        "operationId": "PLAN_LIST",
+        "responses": {}
+      }
+    },
+    "/plans/{id}": {
+      "get": {
+        "tags": [
+          "Plans"
+        ],
+        "summary": "Retorna um plano especifico.",
+        "description": "Busca do plano por ID",
+        "operationId": "PLAN_BY_ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do plano a ser retornado",
+            "required": true,
+            "type": "string",
+            "default": "611d667ea432511a8aa14fa7"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/fees": {
+      "get": {
+        "tags": [
+          "Fees"
+        ],
+        "summary": "Retorna uma tarifa especifica.",
+        "description": "Busca da tarifa por queryParams",
+        "operationId": "FEE_LIST",
+        "parameters": [
+          {
+            "name": "dddOrigin",
+            "in": "query",
+            "description": "Ddd de origem",
+            "required": true,
+            "type": "string",
+            "default": "016"
+          },
+          {
+            "name": "dddDestination",
+            "in": "query",
+            "description": "Ddd de destino",
+            "required": true,
+            "type": "string",
+            "default": "017"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/fees/calculateFees": {
+      "get": {
+        "tags": [
+          "Fees"
+        ],
+        "summary": "Retorna o calculo da tarfifa entre dois ddds",
+        "description": "Calcula a tarifa de um dddOrigem para um dddDestino, levando em conta os planos",
+        "operationId": "FEE_CALCULATED",
+        "parameters": [
+          {
+            "name": "dddOrigin",
+            "in": "query",
+            "description": "Ddd de origem",
+            "required": true,
+            "type": "string",
+            "default": "016"
+          },
+          {
+            "name": "dddDestination",
+            "in": "query",
+            "description": "Ddd de destino",
+            "required": true,
+            "type": "string",
+            "default": "017"
+          },
+          {
+            "name": "minutes",
+            "in": "query",
+            "description": "Minutos utilizados",
+            "required": true,
+            "type": "number",
+            "default": 20
+          },
+          {
+            "name": "planId",
+            "in": "query",
+            "description": "Id referente ao plano buscado",
+            "required": true,
+            "type": "string",
+            "default": "611d667ea432511a8aa14fa7"
+          }
+        ],
+        "responses": {}
+      }
+    }
+  }
+}
